@@ -7,5 +7,7 @@ namespace WebApplication2.Models
 {
     public class Departments
     {
+        public string DepartmentName { get; set; }
+
     }
 }

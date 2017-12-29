@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
@@ -12,12 +13,18 @@ namespace WebApplication2.Controllers
         public ActionResult Index(string id)
         {
             TempData["value"] = id;
+            TempData.Keep("value");
             return View();
         }
-        public string Display()
+        public ActionResult Display()
         {
-            return "Thank You";
+            return View();
         }
-
+        public ActionResult EmpDeptt()
+        {
+            EmpDept ed = new EmpDept {DepartmentName="Computer Science",Firstname="Shivam" };
+            
+            return View(ed);
+        }
     }
 }
